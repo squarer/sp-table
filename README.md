@@ -19,5 +19,3 @@ npm run build-bundle
 ```
 npm run build
 ```
-
-```
