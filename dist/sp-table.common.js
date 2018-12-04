@@ -998,4 +998,4 @@ component.options.__file = "spTable.vue"
 /***/ })
 
 /******/ })["default"];
-//# sourceMappingURL=spTable.common.js.map
+//# sourceMappingURL=sp-table.common.js.map
