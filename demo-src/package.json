@@ -1,24 +1,14 @@
 {
-  "name": "sp-table",
-  "version": "0.1.2",
-  "main": "dist/spTable.umd.js",
-  "module": "dist/spTable.common.js",
-  "unpkg": "dist/spTable.umd.min.js",
+  "name": "demo-src",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --dest docs",
-    "build-bundle": "vue-cli-service build --target lib --name spTable ./src/components/spTable.vue",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/squarer/sp-table"
-  },
-  "keywords": [
-    "vue",
-    "table"
-  ],
   "dependencies": {
+    "sp-table": "^0.1.2",
     "vue": "^2.5.17"
   },
   "devDependencies": {
