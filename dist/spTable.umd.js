@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["sp-table"] = factory();
+		exports["spTable"] = factory();
 	else
-		root["sp-table"] = factory();
+		root["spTable"] = factory();
 })((typeof self !== 'undefined' ? self : this), function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -1008,4 +1008,4 @@ component.options.__file = "spTable.vue"
 
 /******/ })["default"];
 });
-//# sourceMappingURL=sp-table.umd.js.map
+//# sourceMappingURL=spTable.umd.js.map

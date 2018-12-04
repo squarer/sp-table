@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --dest ../docs",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "sp-table": "^0.1.2",
+    "sp-table": "^0.1.4",
     "vue": "^2.5.17"
   },
   "devDependencies": {
