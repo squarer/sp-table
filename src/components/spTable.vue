@@ -122,30 +122,30 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
 .sp-table {
   font-size: 85%;
-}
-.sp-table .flex {
-  display: flex;
-}
-.sp-table th {
-  color: rgba(0,0,0,0.54);
-  vertical-align: middle;
-}
-.sp-table tbody tr {
-  height: 50px;
-}
-.sp-table .thead {
-  display: table-header-group;
-}
-.sp-table .thead td {
-  padding: 16px 12px;
-}
-.sp-table .tfoot {
-  display: table-footer-group;
-}
-.sp-table .pagination {
-  justify-content: flex-end;
+  .flex {
+    display: flex;
+  }
+  th {
+    color: rgba(0,0,0,0.54);
+    vertical-align: middle;
+  }
+  tbody tr {
+    height: 50px;
+  }
+  .thead {
+    display: table-header-group;
+    td {
+      padding: 16px 12px;
+    }
+  }
+  .tfoot {
+    display: table-footer-group;
+  }
+  .pagination {
+    justify-content: flex-end;
+  }
 }
 </style>

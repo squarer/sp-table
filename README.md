@@ -1,21 +1,12 @@
 # sp-table
 
-## Project setup
+## Installation
+### npm
 ```
-npm install
+npm install --save sp-table
 ```
-
-### Compiles and hot-reloads for development
+### cdn
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build-bundle
-```
-
-### Compiles and minifies for demo page
-```
-npm run build
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/sp-table"></script>
 ```
