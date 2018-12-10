@@ -1,95 +1,97 @@
 <template>
   <div id="app">
-    <div class="wrapper">
-      <spTable
-        title="demo"
-        :data="data"
-        :pagination.sync="pagination"
-        :columns="columns"
-      />
+    <div class="header">
+      <div class="title">sp-table</div>
+      <div class="command">
+        npm install --save sp-table
+      </div>
+      <div class="description">some description here</div>
+    </div>
+    <div class="example-wrapper">
+      <div class="example shadow">
+        <h2>Minimal</h2>
+        <Example />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import 'sp-table/dist/spTable.css'
-import spTable from 'sp-table'
+import Example from './components/Example'
+import Collapse from './components/Collapse'
+import CodeSnippet from './components/CodeSnippet'
+
+const snippet1 = `
+<template>
+  <spTable
+    :data="data"
+    :pagination.sync="pagination"
+    :columns="columns"
+  />
+</template>
+`
 
 export default {
   name: 'app',
   data () {
     return {
-      data: [
-       { name: 'Tiger Nixon', position: 'System Architect', office: 'Edinburgh', extn: '5421', created_at: '2011/04/25', salary: '$320,800' },
-        { name: 'Garrett Winters', position: 'Accountant', office :' Tokyo', extn: '8422', created_at: '2011/07/25', salary: '$170,750' },
-        { name: 'Ashton Cox', position: 'Junior Technical Author', office: 'San Francisco', extn: '1562', created_at: '2009/01/12', salary: '$86,000' },
-        { name: 'Cedric Kelly', position: 'Senior Javascript Developer', office: 'Edinburgh', extn: '6224', created_at: '2012/03/29', salary: '$433,060' },
-        { name: 'Airi Satou', position: 'Accountant', office: 'Tokyo', extn: '5407', created_at: '2008/11/28', salary: '$162,700' },
-        { name: 'Brielle Williamson', position: 'Integration Specialist', office: 'New York', extn: '4804', created_at: '2012/12/02', salary: '$372,000' },
-        { name: 'Herrod Chandler', position: 'Sales Assistant', office: 'San Francisco', extn: '9608', created_at: '2012/08/06', salary: '$137,500' },
-        { name: 'Rhona Davidson', position: 'Integration Specialist', office: 'Tokyo', extn: '6200', created_at: '2010/10/14', salary: '$327,900' },
-        { name: 'Colleen Hurst', position: 'Javascript Developer', office: 'San Francisco', extn: '2360', created_at: '2009/09/15', salary: '$205,500' },
-        { name: 'Sonya Frost', position: 'Software Engineer', office: 'Edinburgh', extn: '1667', created_at: '2008/12/13', salary: '$103,600' },
-        { name: 'Jena Gaines', position: 'Office Manager', office: 'London', extn: '3814', created_at: '2008/12/19', salary: '$90,560' },
-        { name: 'Quinn Flynn', position: 'Support Lead', office: 'Edinburgh', extn: '9497', created_at: '2013/03/03', salary: '$342,000' },
-        { name: 'Charde Marshall', position: 'Regional Director', office: 'San Francisco', extn: '6741', created_at: '2008/10/16', salary: '$470,600' },
-        { name: 'Haley Kennedy', position: 'Senior Marketing Designer', office: 'London', extn: '3597', created_at: '2012/12/18', salary: '$313,500' },
-        { name: 'Tatyana Fitzpatrick', position: 'Regional Director', office: 'London', extn: '1965', created_at: '2010/03/17', salary: '$385,750' }
-      ],
-      pagination: {
-        currentPage: 1,
-        perPage: 5
-      },
-      columns: [
-        {
-          label: 'Name',
-          field: 'name',
-          style: 'width: 100px'
-        },
-        {
-          label: 'Position',
-          field: 'position',
-        },
-        {
-          label: 'Office',
-          field: 'office',
-        },
-        {
-          label: 'Extn.',
-          field: 'extn',
-        },
-        {
-          label: 'Created At',
-          field: 'created_at',
-          style: 'width: 120px'
-        },
-        {
-          label: 'Salary',
-          field: 'salary',
-        }
-      ]
+      snippet1: snippet1
     }
   },
   components: {
-    spTable
+    Example,
+    Collapse,
+    CodeSnippet
   }
 }
 </script>
 
 <style>
+body {
+  margin: 0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
-.wrapper {
+.header {
+  height: 220px;
+  background-color: #fc8a83;
+  color: #fff;
+  padding: 0 16px;
+}
+.title {
+  font-size: 30px;
+  padding: 30px;
+}
+.example-wrapper {
   max-width: 600px;
   margin: 0 auto;
+  margin-top: 30px;
+  padding: 16px;
 }
-.sp-table {
-  width: 100%;
+.example {
+  padding: 16px;
+}
+.command {
+  background-color: #d15a53;
+  font-family: monospace;
+  color: #fff;
+  max-width: 450px;
+  margin:  auto;
+  padding: 12px 16px;
+  border-radius: 6px;
+}
+.description {
+  padding: 26px;
+}
+.shadow {
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+}
+h1, h2, h3 {
+  font-weight: 400;
 }
 </style>

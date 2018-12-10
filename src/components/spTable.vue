@@ -124,6 +124,7 @@ export default {
 
 <style scoped lang="scss">
 .sp-table {
+  width: 100%;
   font-size: 85%;
   .flex {
     display: flex;
@@ -146,6 +147,9 @@ export default {
   }
   .pagination {
     justify-content: flex-end;
+  }
+  button {
+    padding: 6px 8px;
   }
 }
 </style>
