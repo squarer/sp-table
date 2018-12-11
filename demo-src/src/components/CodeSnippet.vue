@@ -1,9 +1,6 @@
 <template>
   <div class="code-snippet">
     <div class="language">{{ lang }}</div>
-    <div class="line-numbers">
-      <div class="line-number" v-for="n in lineCount">{{ n }}</div>
-    </div>
     <div class="render" v-html="result"></div>
   </div>
 </template>
@@ -20,17 +17,7 @@ export default {
     result () {
       const highlighted = hljs.highlight(this.lang, this.code.trim())
       return highlighted.value
-    },
-    lineCount () {
-      const str = this.result
-      let length = 0
-      for (var i = 0; i < str.length; ++i) {
-        if (str[i] === '\n') {
-          length++
-        }
-      }
-      return length + 1
-    },
+    }
   },
 }
 </script>
@@ -43,13 +30,8 @@ export default {
   font-size: 10pt;
   overflow: auto;
   position: relative;
-  .line-numbers, .render {
-    padding: 32px 24px;
-  }
-  .line-numbers {
-    border-radius: 2px 0 0 2px;
-  }
   .render {
+    padding: 32px 24px;
     white-space: pre;
   }
   .language {
