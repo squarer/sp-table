@@ -4,7 +4,7 @@
       <td style="border-bottom: none;" :colspan="columns.length">
         <div class="flex">
           <p style="margin: 0; flex: 1;" class="caption">{{ title }}</p>
-          <button @click="$emit('request')">refresh</button>
+          <button v-if="hasRequestListener" @click="$emit('request')">refresh</button>
         </div>
       </td>
     </div>
@@ -58,6 +58,9 @@ export default {
     }
   },
   computed: {
+    hasRequestListener () {
+      return this.$listeners && this.$listeners.request
+    },
     isServerSide () {
       return this.pagination.total !== void 0
     },

@@ -1,7 +1,9 @@
 <template>
   <div class="collapse" :class="{ open: open }">
     <div class="toggle" @click="open = !open">{{ title }} <span class="icon">▼</span></div>
-    <div class="content" v-if="open"><slot/></div>
+    <transition name="slide-down">
+      <div class="content" v-if="open"><slot/></div>
+    </transition>
   </div>
 </template>
 
@@ -21,7 +23,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .toggle {
   padding: 12px;
   text-align: center;
@@ -43,6 +45,12 @@ export default {
     .icon {
       transform: rotate(180deg);
     }
+  }
+  .slide-down-enter, .slide-down-to {
+    opacity: 0;
+  }
+  .slide-down-enter-active {
+    transition: opacity .3s;
   }
 }
 </style>

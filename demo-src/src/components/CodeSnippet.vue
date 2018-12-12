@@ -7,6 +7,8 @@
 
 <script>
 import hljs from 'highlight.js'
+import 'highlight.js/styles/googlecode.css'
+
 export default {
   name: 'code-snippet',
   props: {
@@ -24,7 +26,7 @@ export default {
 
 <style lang="scss">
 .code-snippet {
-  background: white;
+  background: #fafafa;
   border-radius: 3px;
   font-family: 'Roboto Mono', monospace;
   font-size: 10pt;
@@ -38,8 +40,12 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 4px 4px 6px 6px;
+    padding: 5px 10px 0;
     border-radius: 0 0 0 2px;
+    color: #cc9;
+  }
+  .hljs-name, .hljs-attr, .hljs-keyword, .hljs-tag {
+    color: #2973b7;
   }
 }
 </style>
