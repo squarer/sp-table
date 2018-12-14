@@ -12,12 +12,10 @@
         <h2>Minimal</h2>
         <Example />
       </div>
-      <div class="shadow">
-        <Collapse :style="{ marginTop: '12px' }" title="Show code">
-          <CodeSnippet :style="{ marginBottom: '12px' }" class="snippet" lang="HTML" :code="snippet1" />
-          <CodeSnippet :style="{ marginBottom: '12px' }" class="snippet" lang="JS" :code="snippet2" />
-        </Collapse>
-      </div>
+      <Collapse :style="{ marginTop: '12px' }" title="Show code">
+        <CodeSnippet :style="{ marginBottom: '12px' }" class="snippet" lang="HTML" :code="snippet1" />
+        <CodeSnippet :style="{ marginBottom: '12px' }" class="snippet" lang="JS" :code="snippet2" />
+      </Collapse>
     </div>
     <div style="margin-bottom: 42px;" class="example-wrapper">
       <div class="example shadow">
@@ -25,12 +23,10 @@
         <p>With <code>pagination.total</code> property means that you’ll be configuring Table for server-side pagination.</p>
         <Example2 />
       </div>
-      <div class="shadow">
-        <Collapse :style="{ marginTop: '12px' }" title="Show code">
-          <CodeSnippet :style="{ marginBottom: '12px' }" class="snippet" lang="HTML" :code="snippet3" />
-          <CodeSnippet :style="{ marginBottom: '12px' }" class="snippet" lang="JS" :code="snippet4" />
-        </Collapse>
-      </div>
+      <Collapse :style="{ marginTop: '12px' }" title="Show code">
+        <CodeSnippet :style="{ marginBottom: '12px' }" class="snippet" lang="HTML" :code="snippet3" />
+        <CodeSnippet :style="{ marginBottom: '12px' }" class="snippet" lang="JS" :code="snippet4" />
+      </Collapse>
     </div>
   </div>
 </template>
@@ -194,7 +190,7 @@ body {
 }
 .example-wrapper {
   text-align: center;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   margin-top: 30px;
   padding: 16px;
