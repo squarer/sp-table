@@ -33,8 +33,10 @@ export default {
   overflow: auto;
   position: relative;
   .render {
-    padding: 32px 24px;
+    padding: 1.2em 1.4em;
+    line-height: 1.5em;
     white-space: pre;
+    margin: 0;
   }
   .language {
     position: absolute;
