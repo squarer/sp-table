@@ -10,7 +10,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "highlight.js": "^9.13.1",
-    "sp-table": "^0.1.14",
+    "sp-table": "^0.1.15",
     "vue": "^2.5.17"
   },
   "devDependencies": {

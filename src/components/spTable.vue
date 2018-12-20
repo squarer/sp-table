@@ -213,9 +213,11 @@ export default {
         cursor: not-allowed;
       }
       &:before {
-        display: block;
-        text-align: center;
-        line-height: 30px;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
       }
       &.first-page:before {
         content: "\2039\2039";
