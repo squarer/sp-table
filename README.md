@@ -1,5 +1,9 @@
 # sp-table
 
+## Links
+[Live Demo](https://squarer.github.io/sp-table/)
+[JSFiddle](https://jsfiddle.net/squarer/8r9taky3/)
+
 ## Installation
 ### npm
 ```
