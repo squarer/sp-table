@@ -96,7 +96,7 @@ export default {
     }
   },
   watch: {
-    'pagination.total': function (newVal, oldVal) {
+    'pagination.total': function () {
       this.innerPagination = Object.assign({}, this.pagination)
     }
   },
@@ -153,6 +153,7 @@ export default {
     color: rgba(0, 0, 0, 0.85);
     background-color: #f0f2f5;
     font-weight: 500;
+    text-align: left;
   }
   td {
     color: rgba(0, 0, 0, 0.65);
@@ -211,6 +212,11 @@ export default {
         color: rgba(0, 0, 0, .25);
         cursor: not-allowed;
       }
+      &:before {
+        display: block;
+        text-align: center;
+        line-height: 30px;
+      }
       &.first-page:before {
         content: "\2039\2039";
       }
@@ -227,6 +233,7 @@ export default {
     .pagination-label {
       margin: 7px 8px;
       margin-left: 0;
+      text-align: center;
       width: 4em;
     }
   }

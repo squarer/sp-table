@@ -174,7 +174,7 @@ body {
   color: #2c3e50;
 }
 .header {
-  height: 220px;
+  min-height: 220px;
   background-color: #fc8a83;
   color: #fff;
   padding: 0 16px;
@@ -185,11 +185,13 @@ body {
   padding: 30px;
 }
 .example-wrapper {
-  text-align: center;
   max-width: 800px;
   margin: 0 auto;
   margin-top: 30px;
   padding: 16px;
+}
+.example-wrapper h2 {
+  text-align: center;
 }
 .example {
   padding: 16px;

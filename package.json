@@ -1,6 +1,6 @@
 {
   "name": "sp-table",
-  "version": "0.1.10",
+  "version": "0.1.14",
   "main": "dist/spTable.umd.js",
   "module": "dist/spTable.common.js",
   "unpkg": "dist/spTable.umd.min.js",
