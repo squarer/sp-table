@@ -26,13 +26,13 @@
     </tbody>
     <div class="tfoot">
       <td :colspan="columns.length">
-        <div class="flex pagination">
-          <button :disabled="innerPagination.currentPage === 1" @click="toFirst">first</button>
-          <button :disabled="innerPagination.currentPage === 1" @click="prev">prev</button>
-          <div class="text-center" style="margin: 8px; width: 4rem;">{{ innerPagination.currentPage }} / {{ totalPage }}</div>
-          <button :disabled="innerPagination.currentPage === totalPage" @click="next">next</button>
-          <button :disabled="innerPagination.currentPage === totalPage" @click="toLast">last</button>
-        </div>
+        <ul class="flex pagination">
+          <li :class="isFirstPage ? 'disabled first-page' : 'first-page'" @click="toFirst"></li>
+          <li :class="isFirstPage ? 'disabled prev-page' : 'prev-page'" @click="prev"></li>
+          <div class="pagination-label">{{ innerPagination.currentPage }} / {{ totalPage }}</div>
+          <li :class="isLastPage ? 'disabled next-page' : 'next-page'" @click="next"></li>
+          <li :class="isLastPage ? 'disabled last-page' : 'last-page'" @click="toLast"></li>
+        </ul>
       </td>
     </div>
   </table>
@@ -78,6 +78,12 @@ export default {
       const startIndex = (this.innerPagination.currentPage - 1) * this.innerPagination.perPage
       const lastIndex = this.innerPagination.currentPage * this.innerPagination.perPage
       return this.data.slice(startIndex, lastIndex)
+    },
+    isFirstPage () {
+      return this.innerPagination.currentPage === 1
+    },
+    isLastPage () {
+      return this.innerPagination.currentPage === this.totalPage
     }
   },
   data () {
@@ -96,18 +102,22 @@ export default {
   },
   methods: {
     toFirst () {
+      if (this.isFirstPage) return
       this.innerPagination.currentPage = 1
       this.emitParent()
     },
     toLast () {
+      if (this.isLastPage) return
       this.innerPagination.currentPage = this.totalPage
       this.emitParent()
     },
     prev () {
+      if (this.isFirstPage) return
       this.innerPagination.currentPage--
       this.emitParent()
     },
     next () {
+      if (this.isLastPage) return
       this.innerPagination.currentPage++
       this.emitParent()
     },
@@ -129,30 +139,96 @@ export default {
 .sp-table {
   width: 100%;
   font-size: 85%;
+  border-collapse: collapse;
   .flex {
     display: flex;
   }
-  th {
-    color: rgba(0,0,0,0.54);
-    vertical-align: middle;
+  tr {
+    transition: all .3s;
+    &:hover {
+      background-color: #ecf6fd;
+    }
   }
-  tbody tr {
-    height: 50px;
+  th {
+    color: rgba(0, 0, 0, 0.85);
+    background-color: #f0f2f5;
+    font-weight: 500;
+  }
+  td {
+    color: rgba(0, 0, 0, 0.65);
+    border-bottom: 1px solid #e9e9e9;
+  }
+  th, td {
+    padding: 1.4em .8em;
   }
   .thead {
     display: table-header-group;
-    td {
-      padding: 16px 12px;
-    }
   }
   .tfoot {
     display: table-footer-group;
-  }
-  .pagination {
-    justify-content: flex-end;
+    td {
+      padding: 0;
+      border: none;
+    }
   }
   button {
     padding: 6px 8px;
+    transition: all .3s;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #d9d9d9;
+    color: rgba(0, 0, 0, 0.65);
+    &:hover {
+      border-color: #49a9ee;
+      cursor: pointer;
+    };
+    &:disabled {
+      border-color: #d9d9d9;
+      color: rgba(0, 0, 0, .25);
+      cursor: not-allowed;
+    }
+  }
+  ul.pagination {
+    justify-content: flex-end;
+    list-style: none;
+    li {
+      transition: all .3s;
+      margin-right: 8px;
+      outline: 0;
+      min-width: 28px;
+      line-height: 28px;
+      height: 28px;
+      background-color: #fff;
+      border: 1px solid #d9d9d9;
+      border-radius: 4px;
+      padding: 0;
+      &:hover {
+        border-color: #49a9ee;
+        cursor: pointer;
+      };
+      &.disabled {
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, .25);
+        cursor: not-allowed;
+      }
+      &.first-page:before {
+        content: "\2039\2039";
+      }
+      &.prev-page:before {
+        content: "\2039";
+      }
+      &.next-page:before {
+        content: "\203a";
+      }
+      &.last-page:before {
+        content: "\203a\203a";
+      }
+    }
+    .pagination-label {
+      margin: 7px 8px;
+      margin-left: 0;
+      width: 4em;
+    }
   }
 }
 </style>

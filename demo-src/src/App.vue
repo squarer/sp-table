@@ -55,7 +55,7 @@ export default {
   data () {
     return {
       data: [
-        { name: 'Tiger Nixon', position: 'System Architect', created_at: '2011/04/25', salary: '$320,800' },
+        { name: 'Tiger Nixon', created_at: '2011/04/25', salary: '$320,800' },
         ...
       ],
       pagination: {
@@ -67,10 +67,6 @@ export default {
           label: 'Name',
           field: 'name',
           style: 'width: 100px'
-        },
-        {
-          label: 'Position',
-          field: 'position',
         },
         {
           label: 'Salary',
