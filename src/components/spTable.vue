@@ -3,7 +3,7 @@
     <div class="thead">
       <td style="border-bottom: none;" :colspan="columns.length">
         <div class="flex">
-          <p style="margin: 0; flex: 1;" class="caption">{{ title }}</p>
+          <p style="margin: 0; flex: 1; line-height: 30px;">{{ title }}</p>
           <button v-if="hasRequestListener" @click="$emit('request')">refresh</button>
         </div>
       </td>
@@ -218,6 +218,7 @@ export default {
         height: 100%;
         align-items: center;
         justify-content: center;
+        font-size: 12px;
       }
       &.first-page:before {
         content: "\2039\2039";
@@ -236,7 +237,7 @@ export default {
       margin: 7px 8px;
       margin-left: 0;
       text-align: center;
-      width: 4em;
+      min-width: 4em;
     }
   }
 }
