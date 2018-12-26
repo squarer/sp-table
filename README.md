@@ -2,7 +2,7 @@
 
 Table component with server-side pagination
 
-![Screenshot](screenshot.png)
+<img src="https://raw.githubusercontent.com/squarer/sp-table/master/screenshot.png" width="750px" />
 
 ## Links
 + [Live Demo](https://squarer.github.io/sp-table/)
